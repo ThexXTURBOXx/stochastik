@@ -1,0 +1,108 @@
+\section{Erwartungswert \& Varianz}
+
+\textbf{Integriebare Zufallsvariablen}
+\begin{itemize}
+\item Diskretes $X$ mit Träger $D_X$ \textit{integrierbar}
+  $:\Leftrightarrow \sum_{x \in D_X} |x| \cdot \Pr(\{X=x\}) < \infty$ \\
+  Diskrete Zufallsvariablen mit \underline{endlichem} Träger sind immer
+  integrierbar!
+
+\item  Absolut stetige Zufallsvariable $X$ mit Dichte $f_X$ \textit{integrierbar}
+  \mbox{$:\Leftrightarrow \int_\R |x| \cdot f_X(x)~d\lambda(x) < \infty$}
+
+\item $\L_1 := \{X \text{ integrierbar}\}$ ist ein Vektorraum.
+
+\item \textit{Erwartungswert $\E(X)$} für diskretes $X\in\L_1$:
+  $\E(X) := \sum_{x \in D_X} x \cdot \Pr(\{X=x\}) \in\R$
+
+\item \textit{Erwartungswert $\E(X)$} für absolut stetiges $X\in\L_1$:
+  $\E(X) := \int_\R x\cdot f_X~d\lambda(x) \in\R$
+
+\item Der Erwartungswert ist linear und monoton.
+
+\item \textbf{Transformationssatz}: Für $X$ $d$-dimensionaler Zufallsvektor
+  diskret/absolut stetig und \mbox{$h\!:\ \R^d\to\R$ Borel-messbar} gilt
+  \[
+    h(X)\in\L_1 \Leftrightarrow
+    \begin{cases}
+    \sum_{x \in D_X} |h(x)| \cdot \Pr(\{X=x\}) < \infty      & X \text{ diskret}  \\
+    \int_{\R^d} |h(x)| \cdot f_X(x)~d\lambda_d(x) < \infty   & X \text{ absolut stetig}
+    \end{cases}.
+  \]
+  Gegebenenfalls
+  \[
+  	\E(h(X)) =
+    \begin{cases}
+    \sum_{x \in D_X} h(x) \cdot \Pr(\{X=x\}) < \infty			& X \text{ diskret} \\
+    \int_{\R^d} h(x) \cdot f_X(x)~d\lambda_d(x) < \infty  & X \text{ absolut stetig}
+    \end{cases}.
+  \]
+
+\item $X,Y\in\L_1$ unabhängig
+  $\Rightarrow X \cdot Y \in\L_1$ mit $\E(X \cdot Y) = \E(X) \cdot \E(Y)$
+  \marginpar{\vspace{-2.2em}\begin{equation}\label{unabhaengig_e}\end{equation}}
+\end{itemize}
+\hspace{3em}
+
+\textbf{Quadratisch integrierbare Zufallsvariablen}
+\begin{itemize}
+\item $X$ \textit{quadratisch integrierbar} $:\Leftrightarrow X^2\in\L_1$
+
+\item $\L_2 := \{X \text{ quadratisch integrierbar}\}$ ist Untervektorraum von $\L_1$
+
+\item Für $X$ diskret mit Träger $D_X$ bzw. absolut stetig mit Dichte $f_X$ gilt:
+  \[
+    X\in\L_2\Leftrightarrow
+    \begin{cases}
+    \sum_{x\ in D_X} x^2 \cdot \Pr(\{X=x\}) < \infty			& \text{X diskret} \\
+    \int_{\R^d} x^2\cdot f_X(x)~d\lambda_d(x) < \infty		& \text{X absolut stetig}
+    \end{cases}.
+  \]
+Gegebenenfalls ist $\E(X^2)$ durch obige(s) Summe/Integral gegeben.
+
+\item Für $X\in\L_2$ ist $\Var(X) := \E((X-\E(X))^2)$ die \textit{Varianz} von $X$.
+
+\item $\Var(X) = \E(X^2) - (\E(X))^2$,
+  \quad $\Var(\alpha \cdot X + \beta) = \alpha^2\Var(X)$
+
+\item \textbf{Tschebyschev-Ungleichung}. Für $X\in\L_2, \varepsilon > 0$ gilt:
+  \[
+    \Pr(|X-\E(X)| \geq \varepsilon) \leq \frac{1}{\varepsilon^2} \cdot \Var(X)
+  \]
+  sowie
+  \[
+    \Var(X) = 0 \Leftrightarrow \Pr(\{X=\E(x)\}) = 1.
+  \]
+
+\item \textbf{Formel von Bienaymé}. Für $X_1,\ldots,X_n\in\L_2$ unabhängig gilt:
+  \[
+    \Var(\sum_{i=1}^n X_i) = \sum_{i=1}^n \Var(X_i).
+  \]
+
+\item $X,Y\in\L_2 \Rightarrow X \cdot Y \in\L_1$
+
+\item $\overline{\L_2}$ ist Hilbertraum mit $\langle X,Y \rangle := \E(X \cdot Y)$
+\end{itemize}
+\hspace{3em}
+
+\textbf{Kovarianz}
+\begin{itemize}
+\item Für $X,Y\in\L_2$ ist die \textit{Kovarianz} definiert durch
+ \mbox{$\Cov(X,Y) := \E\big( (X-\E(X) \cdot (Y-\E(Y)) \big)$}
+
+\item Für $X,Y\in\L_2$ gilt $\Cov(X,Y) = \E(X \cdot Y) - \E(X) \cdot \E(Y)$
+
+\item $X,Y$ heißen \textit{unkorreliert} wenn $\Cov(X,Y) = 0$.\\
+  Es gilt: $X,Y$ unabhängig $\Rightarrow X,Y$ unkorreliert
+  \marginpar{\vspace{-3.45em}\begin{equation}\label{unabhaengig_kor}\end{equation}}
+
+\item Für $X,Y$ mit $\Var(X),\Var(Y)>0$ ist
+  \[
+    \rho(X,Y) := \frac{\Cov(X,Y)}{\sqrt{\Var(X)\cdot\Var(Y)}} =
+    \cos(\sphericalangle (X,Y))
+  \]
+  der \textit{Korrelationskoeffizient} von $X$ und $Y$.
+
+\item \textbf{Cauchy-Schwarz}: $X,Y\in\L_2
+  \Rightarrow |\E(X \cdot Y)| \leq \sqrt{\E(X^2) \cdot \E(Y^2)}$
+\end{itemize}

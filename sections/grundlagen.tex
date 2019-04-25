@@ -1,0 +1,89 @@
+\section{Grundlagen}
+
+\textbf{$\sigma$-Algebra}
+\begin{enumerate}
+\item $\O\in\A$
+\item $A\in\A \Rightarrow A\compl\in\A$
+\item $A_1,A_2,\ldots\in\A \Rightarrow \bigcup_{i=1}^{\infty} A_i \in\A$
+\end{enumerate}
+
+\textbf{Wahrscheinlichkeitsmaß} $\Pr\!: \A \rightarrow [0,1]$
+\begin{enumerate}
+\item $\Pr(\O) = 1$
+\item $A_1,A_2,\ldots\in\A\ \pd \Rightarrow
+  \Pr(\bigcup_{i=1}^{\infty} A_i) = \sum_{i=1}^{\infty} \Pr(A_i)$
+  \hfill\textit{($\sigma$-Additivität)}
+\end{enumerate}
+
+Daraus folgt für $A,B,A_1,A_2,\ldots\in\A$:
+\begin{itemize}
+\item $A \subset B \Rightarrow \Pr(B) = \Pr(A) + \Pr(B \setminus A)$
+\item $A \subset B \Rightarrow \Pr(A) \leq \Pr(B)$ \hfill\textit{(Monotonie)}
+\item $\Pr(A\compl) = 1 - \Pr(A)$
+\item $\Pr(A \cup B) = \Pr(A) + \Pr(B) - \Pr(A \cap B)$
+\item $\Pr(\bigcup_{i=1}^{\infty} A_i) \leq \sum_{i=1}^{\infty} \Pr(A_i)$
+  \hfill\textit{($\sigma$-Subadditivität)}
+\item $A_1 \subset A_2 \subset \cdots \Rightarrow
+  \Pr(\bigcup_{i=1}^{\infty} A_i) = \limfty{i} \Pr(A_i)$
+  \hfill(\textit{$\sigma$-Stetigkeit von unten)}
+\item $A_1 \supset A_2 \supset \cdots \Rightarrow
+  \Pr(\bigcap_{i=1}^{\infty} A_i) = \limfty{i} \Pr(A_i)$
+  \hfill(\textit{$\sigma$-Stetigkeit von oben)}
+\end{itemize}
+
+\textbf{Bedingte Wahrscheinlichkeit}\\
+Falls $\Pr(B) > 0$, dann
+$\Pr(\ \cdot \mid B) := \dfrac{\Pr(\ \cdot\ \cap B)}{\Pr(B)}$
+W'Maß auf $\A$ mit $\Pr(B \mid B) = 1$.
+
+Für $A,B,A_1,A_2,\ldots\in\A$ mit
+$\Pr(A),\Pr(B), \Pr(\bigcap_{i=1}^{n-1} A_i) > 0$ gilt:
+
+\begin{itemize}
+\item $\Pr(B \mid A) = \dfrac{\Pr(A \mid B) \cdot \Pr(B)}{\Pr(A)}$
+\item $\Pr(\bigcap_{i=1}^{n} A_i) = \Pr(A_1) \cdot \Pr(A_2 \mid A_1) \cdots
+  \Pr(A_1 \cap \cdots \cap A_n) \cdot \Pr(A_n \mid A_1 \cap \cdots \cap A_{n-1})$
+\end{itemize}
+
+\textbf{Formel der totalen Wahrscheinlichkeit}\\
+Für $B_1,B_2,\ldots,B_n\in\A\ \pd$ mit $\Pr(B_i) > 0$ für alle
+$i\in\{1,\ldots,n\}$ und $\bigcup_{i=1}^{n} B_i = \O$ gilt:
+\[
+  \Pr(A) = \sum_{i=1}^{n} \Pr(A \mid B_i) \cdot \Pr(B_i) \text{ für alle } A\in\A.
+\]
+
+\newpage
+
+\textbf{Formel von Bayes}\\
+Für $B_1,B_2,\ldots,B_n\in\A\ \pd$ mit $\Pr(B_i) > 0$ für alle
+$i\in\{1,\ldots,n\}$ und $\bigcup_{i=1}^{n} B_i = \O$ gilt:
+\[
+  \Pr(B_i \mid A)=
+  \frac{\Pr(A \mid B_i) \cdot \Pr(B_i)}{\sum\limits_{j=1}^{n} \Pr(A \mid B_j)
+  \cdot \Pr(B_j)} \text{ für alle } A\in\A \text{ mit } \Pr(A) > 0.
+\]
+
+\textbf{Unabhängigkeit}\\
+$A,B\in\A$ unabhängig $:\Leftrightarrow \Pr(A \cap B) = \Pr(A) \cdot \Pr(B)
+\Leftrightarrow P(A \mid B) = P(A)$ für $\Pr(B) > 0$
+
+$A_1,\ldots,A_n\in\A$ unabhängig $\Leftrightarrow \Pr(\bigcap_{i=1}^{n} A_i) = $
+$\prod_{i=1}^{n} \Pr(A_i) \Rightarrow $ paarweise Unabhängigkeit
+
+\textbf{Diskrete Modelle}\\
+
+
+\begin{table}[h]
+\hspace{-2.5em}
+\begin{tabular}{l|l|l|}
+\cline{2-3}
+                                       & \begin{tabular}[c]{@{}l@{}} mit Berücksichtigung\\ der Reihenfolge\end{tabular} & \begin{tabular}[c]{@{}l@{}}ohne Berücksichtigung\\ der Reihenfolge\end{tabular}                                                                   \\ \hline
+\multicolumn{1}{|l|}{mit Zurücklegen}  & \begin{tabular}[c]{@{}l@{}}$\O=N^k$,\\ $|\O| = n^k$\end{tabular}   & \begin{tabular}[c]{@{}l@{}}$\O = \{\o\in N^k\mid1\leq\o_1\leq\ldots\leq\o_n\leq n\}$,\\ $|\O| = \binom{n+k-1}{k}$\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{ohne Zurücklegen} & \begin{tabular}[c]{@{}l@{}}$\O=\{\o\in N^k \mid \o_i\neq\o_j \text{ für } i\neq j\} $\\ $|\O|=\frac{n!}{(n-k)!}$\end{tabular}  & \begin{tabular}[c]{@{}l@{}}$\O=\{\o\in N^k\mid 1\leq\o_1<\ldots<\o_k\leq n\}$,\\ $|\O|=\binom{n}{k}$\end{tabular}              \\ \hline
+\end{tabular}
+\end{table}
+
+Für $n,k\in\N$ mit $k \leq n$ gilt
+$\binom{n}{k} := \frac{n!}{k!(n-k)!}$,
+$\binom{n}{k-1} + \binom{n}{k} = \binom{n+1}{k}$,
+$\binom{n}{k} = \binom{n}{n-k}$.

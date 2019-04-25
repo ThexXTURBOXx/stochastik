@@ -1,0 +1,188 @@
+\section{Zufallsvariablen}
+\textbf{Reellwertige Zufallsvariable}\\
+$X\!: \O\to\R$ ist \textit{reellwertige Zufallsvariable} auf $(\O,\A,\Pr)$,
+wenn
+\[
+  \forall I \text{ Intervall}\!: \{\o\in\O \mid X(\o) \in I\} \in \A.
+\]
+Falls $\A = \Po(\O)$ ist jedes $X\!: \O\to\R$ Zufallsvariable.
+
+\textbf{Verteilungsfunktion}\\
+Die \textit{Verteilungsfunktion}
+\[
+  F_X\!: \R \to [0,1],\ x \mapsto \Pr(\{X \leq x\})
+\]
+einer Zufallsvariablen ist monoton wachsend, rechtsseitig stetig und es gilt\\
+$\limfty{x} F_X(x) = 1$,
+$\lim\limits_{x\to -\infty} F_X(x) = 0$,
+$F_X(x) - F_X(x\textbf{-}) = \Pr(\{X = x\})$.
+
+\textbf{Reellwertiger Zufallsvektor}\\
+$X = (X_1,\ldots,X_d)\!: \O\to\R^d$ ist \textit{reellwertiger Zufallsvektor},
+wenn jede Komponente $X_i$ reellwertige Zufallsvariable ist.
+Es gilt:\\
+\[
+  X \text{ ist Zufallsvektor } \Leftrightarrow X \text{ ist Borel-messbar.}
+\]
+
+\textbf{Verteilung}\\
+Die \textit{Verteilung} eines $d$-dimensionalen Zufallsvektors $X$:
+\[
+  \Pr_X\!: \B_d \to [0,1],\ B \mapsto \Pr(\{X \in B\})
+\]
+ist ein Wahrscheinlichkeitsmaß auf $\B_d$.
+
+\textbf{Randverteilung}\\
+Zu einem Zufallsvektor $X = (X_1,\ldots,X_d)$ heißen ($i\in\{1,\ldots,d\}$)
+\[
+  \Pr_{X_i}\!: \B_1 \to [0,1],\ B \mapsto \Pr(\{X_i \in B\})
+\]
+die \textit{(eindimensionalen) Randverteilungen} von $X$.
+
+\textbf{Wahrscheinlichkeitsfunktion}\\
+Sei $\O$ abzählbar.
+Eine Funktion $f\!: \O \to [0,\infty)$ heißt
+\textit{Wahrscheinlichkeitsfunktion}, falls
+\[
+  \sum_{\o\in\O} f(\o) = 1.
+\]
+
+\textbf{Wahrscheinlichkeitsdichte}\\
+Eine Funktion $f\in\F_d^+$ heißt \textit{Wahrscheinlichkeitsdichte},
+falls
+\[
+  \int_{\R^d} f(x)~d\lambda(x) = 1.
+\]
+
+\textbf{Bedeutung von W'funktionen/-dichten}\\
+Wahrscheinlichkeitsfunktionen/-dichten definieren Wahrscheinlichkeitsmaß auf
+$\A$ durch
+\[
+  \Pr(A) = \sum_{\o \in A} f(\o) \text{ bzw. } \Pr(A) = \int_A f(x)~d\lambda(x)
+  \quad \text{für } A\in\A.
+\]
+
+Zu jeder Wahrscheinlichkeitsfunktion/-dichte $f$ gibt es $(\O,\A,\Pr)$, sodass
+darauf eine (diskrete/absolut stetige) Zufallsvariable $X$ mit
+$f_X = f$ existiert.
+
+\textbf{Diskrete Zufallsvariablen}\\
+Eine Zufallsvariable heißt \textit{diskret}, wenn $\Pr(\{X \in D\}) = 1$
+für ein abzählbares $D\subset\R$ gilt.
+Das kleinste solche $D =: D_X$ heißt \textit{Träger} der Zufallsvariablen $X$.\\
+Es gilt:
+$\underbrace{(\O,\A,\Pr) \text{ diskret}}_{\text{also $\O$ abzählbar}}$
+$\Rightarrow X(\O)$ abzählbar $\Rightarrow X$ diskret.
+
+\textbf{Diskrete Zufallsvektoren}\\
+Ein $d$-dimensionaler Zufallsvektor $X = (X_1,\ldots,X_d)$ heißt \textit{diskret},
+wenn es ein abzählbares $D\subset\R^d$ mit $\Pr(\{X \in D\}) = 1$ gibt.\\
+Dann ist $D_X = \{x\in\R^d \mid \Pr(\{X=x\})>0\}
+\overset{\text{i.A.}}{\neq} D_{X_1} \times\cdots\times D_{X_d}$
+der Träger von $X$.\\
+Es gilt: $X$ diskret $\Leftrightarrow \forall i\in\{1,\ldots,d\}\!: X_i$ diskret.\\
+Für $h:\R^d\to\R$ Borel-messbar ist $h(X)$ diskret mit $D_{h(X)} = h(D_X)$.
+
+\textbf{Absolut stetige Zufallsvektoren}\\
+Ein Zufallsvektor $X$ heißt \textit{absolut stetig verteilt} falls die
+Verteilung $\Pr_X$ eine Dichte $f_X$ besitzt.
+
+\textbf{Unabhängigkeit von Zufallsvariablen}\\
+Eine Folge $(X_i)_{i \in I}$ von Zufallsvariablen heißt \textit{unabhängig} wenn
+für jede Folge $(J_i)_{i \in I}$ von Intervallen die Folge der Ereignisse
+$(\{X_i \in J_i\})_{i \in I}$ unabhängig ist.
+Wegen:
+\[
+  \forall x\in\R\!: \{X \leq x\} \in \A
+  \Leftrightarrow \forall I \text{ Intervall}\!: \{X \in I\} \in \A
+\]
+ist $(X_i)_{i \in I}$ genau dann unabhängig, wenn für alle endlichen Mengen
+$\emptyset \neq \tilde{I} \subset I$ und
+\mbox{$(x_i)_{i\in\tilde{I}}\subset\R$} gilt:
+\[
+  \Pr(\bigcap_{i\in\tilde{I}} \{X_i \leq x_i\})=
+  \prod_{i\in\tilde{I}} \Pr(\{X_i \leq x_i\}).
+\]
+Die Unabhängigkeit einer Folge $(X_i)_{i \in I}$ impliziert die paarweise
+Unabhängigkeit von $X_i,X_j$ für $i,j \in I$ mit $i \neq j$.
+
+Beachte auch (\ref{unabhaengig_e}) und (\ref{unabhaengig_kor}).
+
+Es gilt: $X,X$ unabhängig $\Leftrightarrow \exists c\in\R\!: \Pr(\{X=c\}) = 1$ \U
+
+\textbf{Identische Verteilung}\\
+Zwei Zufallsvariablen $X,Y$ heißen \textit{identisch verteilt},
+wenn $\Pr_X = \Pr_Y \Leftrightarrow F_X = F_Y$.\\
+Zwei Zufallsvektoren
+$\tilde{X} = (\tilde{X}_1,\ldots,\tilde{X}_d),
+\tilde{Y} = (\tilde{Y}_1,\ldots,\tilde{Y}_d)$
+heißen \textit{identisch verteilt}, wenn
+$\Pr_{\tilde{X}} = \Pr_{\tilde{Y}}$.\\
+Es gilt: $\tilde{X},\tilde{Y}$ identisch verteilt
+$\Rightarrow \forall i\in\{1,\ldots,d\}\!: \tilde{X}_i,\tilde{Y}_i$ identisch verteilt.
+
+\newpage
+\begin{table}[h]
+\centering
+\caption*{\textbf{Vergleich}}
+\begin{tabular}{P{0.45\linewidth} | P{0.45\linewidth}}
+
+\textbf{diskret} & \textbf{absolut stetig} \\
+
+\multicolumn{2}{c}{\textit{W'funktion/Dichte}}  \\
+
+Es existiert W'funktion: & \\
+$f_X\!: D_X \to [0,1],\ x \mapsto \Pr(\{X=x\})$  &
+$\Pr_X$ besitzt Dichte $f_X$ \\
+
+&\\ %empty row
+
+\multicolumn{2}{c}{\textit{Verteilungsfunktion (eindim.!)}}  \\
+
+$$F_X(x) = \sum\limits_{y \in D_X \cap (-\infty, x]} \Pr(\{X=y\})$$  &
+$$F_X(x) = \int_{(-\infty,x]}f_X(y)~d\lambda(y)$$  \\
+
+\multicolumn{2}{c}{\textit{Verteilung}}  \\
+
+$$\Pr_X(A) = \sum\limits_{x\in D_X \cap A} \Pr(\{X=x\})$$  &
+$$\Pr_X(A) = \int_{A} f_X(x)~d\lambda(x)$$  \\
+
+\multicolumn{2}{c}{\textit{Randverteilung/Randdichte}}  \\
+\multicolumn{2}{c}{$X=(X_1\ldots,X_d)$}  \\
+
+$P_{X_i}(\{x\}) = $
+  \mbox{$\Pr(\{X_i=x\} \cap \{(X_1,\ldots,X_d) \in D_X\})$}	&
+$f_{X_i}(x) =$
+\mbox{$\int_\R\cdots\int_\R f_X(x_1,\ldots,x_{i-1},x,x_{i+1},\ldots,x_d)~
+d\lambda(x_1) \cdots d\lambda_{x_d}$}  \\
+&\\ %empty row
+&
+(alles integrieren außer $i$-te Koordinate)  \\
+&\\ %empty row
+
+\multicolumn{2}{c}{\textit{$X_1,\ldots,X_d$ unabhängig}}\\
+
+$\forall x_1,\ldots,x_d\in\R\!:$
+\mbox{$\Pr(\bigcap_{i=1}^d \{X_i=x_i\}) = \prod_{i=1}^d \Pr(\{X_i=x_i\})$}  &
+$\forall B_1,\ldots,B_d\in\B_1:$
+\mbox{$\Pr(\bigcap_{i=1}^d \{X_i\in B_i\}) = \prod_{i=1}^d \Pr(\{X_i\in B_i\})$}  \\
+&
+$\Leftrightarrow$  \\
+&
+$\forall B_1,\ldots,B_d\in\B_1:$
+\mbox{$\Pr_X(B_1\times\cdots\times B_d) = \prod_{i=1}^d \Pr_{X_i}(B_i)$}  \\
+&\\ %empty row
+&
+Gemeinsame Verteilung $P_X$ von $X_1,\ldots,X_d$ ist also Produkt der
+Randverteilungen $P_{X_{i\in\{1,\ldots,d\}}}$  \\
+&\\ %empty row
+
+\multicolumn{2}{c}{\textit{$X,Y$ identisch verteilt (eindim.!)}}  \\
+
+$D_X = D_Y$ und $f_X = f_Y$ &
+$P_X=P_Y$  \\
+$\forall z\in\R\!: \Pr(\{X=z\}) = \Pr'(\{Y=z\})$  &
+$\forall A\in\B_1\!: \Pr(\{X \in A\}) = \Pr'(\{Y \in A\})$ \\
+
+\end{tabular}
+\end{table}

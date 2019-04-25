@@ -1,0 +1,196 @@
+\section{Verteilungen}
+
+\textbf{Bernoulli-Verteilung} $X\sim\mathbf{B}(1,p)$ mit $p \in [0,1]$
+\begin{itemize}
+\item $\Pr(\{X=1\}) = p,\ \Pr(\{X=0\}) = 1-p$
+
+\item diskret mit $D_X = \begin{cases}
+  \{0,1\}  & \text{falls } p \in (0,1) \\
+  \{0\}    & \text{falls } p = 0       \\
+  \{1\}    & \text{falls } p = 1
+  \end{cases}$
+
+\item $F_X(x) = \begin{cases}
+  0    & \text{für } x < 0        \\
+  1-p  & \text{für } 0 \leq x <1  \\
+  1    & \text{für } x \geq 1
+  \end{cases}$
+
+\item $\E(X) = p$, $\Var(X) = p-p^2 = p \cdot (1-p)$
+
+\end{itemize}
+
+\textbf{Binomial-Verteilung} $X\sim\mathbf{B}(n,p)$ mit $p \in [0,1]$
+\begin{itemize}
+\item $\forall k\in\{0,\ldots,n\}\!:
+  \Pr(\{X=k\}) = \binom{n}{k} \cdot p^k\cdot (1-p)^{n-k}$
+
+\item diskret mit
+  $D_X = \begin{cases}
+  \{0,\ldots,n\}  & \text{falls } p \in (0,1)  \\
+  \{0\}           & \text{falls } p = 0        \\
+  \{n\}           & \text{falls } p = 1
+  \end{cases}$
+
+\item $\E(X) = n \cdot p$, $\Var(X) = n \cdot p \cdot (1-p)$
+
+\item Anwendung: Zählen der Erfolge von $n$ unabhängigen, hintereinander
+  ausgeführten Experimenten mit Erfolgswahrscheinlichkeit $p$.
+\end{itemize}
+
+\textbf{Hypergeometrische Verteilung} $X\sim\mathbf{H}(N,N_0,n)$
+\begin{itemize}
+\item $\forall l \in D_X\!: \Pr(\{X=l\})
+  =\frac{\binom{N_0}{l} \cdot \binom{N-N_0}{n-l}}{\binom{N}{n}}$
+
+\item diskret mit
+  $D_X = \{\max(0,n-(N-N_0)),\ldots,\min(N_0,n)\}$
+
+\item Anwendung: unter $N$ Objekten finden sich $N_0$ markierte und es werden
+  $n$ entnommen
+\end{itemize}
+
+\textbf{Poisson-Verteilung} $X\sim\mathbf{P}(\lambda)$ für $\lambda > 0$
+\begin{itemize}
+\item $\forall k\in\N_0\!:
+  \Pr(\{X=k\}) = \exp(-\lambda) \cdot \frac{\lambda^k}{k!}$
+
+\item diskret mit $D_X = \N_0$
+
+\item $X\sim\mathbf{P}(\lambda_1), Y\sim\mathbf{P}(\lambda_2)
+  \Rightarrow X+Y\sim\mathbf{P}(\lambda_1 + \lambda_2)$ \U
+
+\item $\E(X) = \lambda = \Var(X)$, $\E(X^2) = \lambda^2 + \lambda$
+
+\item Anwendung: Approximation von $\mathbf{B}(n,p)$ durch $\mathbf{P}(\lambda)$
+  mit $\lambda = n \cdot p$ für 'große' $n$ und 'kleine' $p$, also Eintreffen
+  eines seltenen Ereignis bei großer Anzahl an Wiederholungen
+\end{itemize}
+
+\newpage
+\textbf{Geometrische Verteilung} $X\sim\mathbf{G}(p)$ mit $p \in (0,1]$
+\begin{itemize}
+\item $\forall k\in\N\!: \Pr(\{X=k\}) = p \cdot (1-p)^{k-1}$
+
+\item diskret mit $D_X = \N$
+
+\item $\E(X) = \frac{1}{p}$, $\Var(X) = \frac{1-p}{p^2}$,
+  $\E(X^2) = \frac{2-p}{p^2}$
+
+\item Gedächtnislos:\\ $\forall k_1,k_2\in\N \text{ mit } k_1 < k_2\!:
+  \Pr(\{X > k_2\} \mid \{X > k_1\}) = \Pr(\{X > k_2 - k_1\})$
+
+\item Anwendung: diskretes Warten bis zum ersten Eintritt eines Ereignisses
+\end{itemize}
+
+\textbf{Gleichverteilung} $X\sim\mathbf{U}([a,b])$ für $-\infty < a < b < \infty$
+\begin{itemize}
+\item absolut stetig mit
+  $f_X(x) = \begin{cases}
+  \frac{1}{b-a} 	& \text{falls } x \in [a,b]	\\
+  0				& \text{sonst }
+  \end{cases}$
+
+\item
+  $F_X(x) = \begin{cases}
+  0               & \text{falls } x < a	    	\\
+  \frac{x-a}{b-a} & \text{falls } x \in [a,b]	\\
+  1               & \text{sonst}
+  \end{cases}$
+
+\item $\E(X) = \frac{a+b}{2}$, $\Var(X) = \frac{(b-a)^2}{12}$,
+  $\E(X^2) = \frac{b^3-a^3}{3(b-a)}$
+\end{itemize}
+
+\textbf{Einpunktverteilung} $X\sim\mathbf{U}(\{c\})$ für ein $c\in\R$
+\begin{itemize}
+\item $P(\{X=c\}) = 1$
+
+\item diskret mit $D_X = \{c\}$
+
+\item
+  $F_X(x) = \begin{cases}
+  0 	&\text{falls } x < c     \\
+  1 & \text{falls } x \geq c
+  \end{cases}$
+
+\item $\E(X) = c$, $\Var(X) = 0$
+\end{itemize}
+
+\textbf{Exponentialverteilung} $X\sim\mathbf{Exp}(\lambda)$ für $\lambda > 0$
+\begin{itemize}
+\item absolut stetig mit
+  $f_X\!: \R \to [0,\infty],\ x \mapsto \begin{cases}
+  \lambda \cdot \exp(-\lambda x) & \text{falls } x \geq 0	\\
+  0                              & \text{sonst }
+  \end{cases}$
+
+\item
+  $F_X(x) = \begin{cases}
+  0                    & \text{falls } x \leq 0  \\
+  1 - \exp(-\lambda x) & \text{falls } x > 0
+  \end{cases}$
+
+\item $\E(X) = \frac{1}{\lambda}$, $\Var(X) = \frac{1}{\lambda^2}$,
+  $\E(X^2) = \frac{2}{\lambda^2}$
+
+\item Gedächtnislos: $\forall s,t>0\!: \Pr(\{X>t+s\} \mid \{X>t\}) = \Pr(\{X>s\})$
+
+\item Anwendung: Warten bis zum ersten Eintritt eines Ereignisses
+  (zB Lebensdauer, radioaktiver Zerfall,\ldots)
+\end{itemize}
+
+\textbf{Standard-Normalverteilung} $X\sim\mathbf{N}(0,1)$
+\begin{itemize}
+\item absolut stetig mit $f_X\!: \R \to [0,\infty],\
+  x \mapsto \frac{1}{\sqrt{2\pi}} \cdot \exp(-\frac{x^2}{2})$
+
+\item $\Phi(x) := F_X(x)=
+  \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{x} \exp(-\frac{y^2}{2})~d\lambda(y)$
+  (keine explizite Formel)
+
+\item $\forall z\in\R\!: \Phi(z) + \Phi(-z) = 1$ \U
+
+\item $\E(X) = 0$, $\Var(X) = 1$
+
+\end{itemize}
+
+\textbf{Normalverteilung} $X\sim\mathbf{N}(\mu,\sigma^2)$ für
+  $\mu,\sigma\in\R,\ \sigma > 0$
+\begin{itemize}
+\item absolut stetig mit $f_X\!: \R \to [0,\infty],\
+  x \mapsto \frac{1}{\sqrt{2\pi\sigma^2}} \cdot \exp(-\frac{(x-\mu)^2)}{2\sigma^2})$
+
+\item $X\sim\mathbf{N}(\mu,\sigma^2)
+  \Rightarrow a \cdot X + b \sim\mathbf{N}(a\cdot\mu+b,a^2\cdot\sigma^2)$
+
+\item Also: $\frac{X-\mu}{\sigma} \sim \mathbf{N}(0,1)$
+
+\item $\E(X) = \mu$, $\Var(X) = \sigma^2$
+\end{itemize}
+
+\textbf{Gleichverteilung} (mehrdimensional) $X\sim\mathbf{U}(S)$ für $S\subset\R^n$
+\underline{endlich}
+\begin{itemize}
+\item $\forall x\in S\!: \Pr(\{X=x\}) = \frac{1}{|S|}$
+
+\item diskret mit $D_X = S$
+\end{itemize}
+
+\textbf{Gleichverteilung} (mehrdimensional) $X\sim\mathbf{U}(G)$ für $G\in\B_d$
+\begin{itemize}
+\item $\Pr_X(A) = \frac{\lambda_d(A\cap G)}{\lambda_d(G)} =
+  \int_A \frac{1}{\lambda_d(G) \cdot \chi_G(x)}~d\lambda(x)$
+
+\item absolut stetig mit $f_X = \frac{1}{\lambda_d(G)} \cdot \chi_G$
+\end{itemize}
+
+\textbf{Standard-Normalverteilung} (mehrdimensional)
+\begin{itemize}
+\item absolut stetig mit
+  $f_X\!: \R^d \to [0,\infty),\
+  x \mapsto (2\pi)^{-d/2} \cdot \exp(-\frac{1}{2} \sum_{i=1}^{d}x_i^2)$
+
+\item $X = (X_1,\ldots,X_d)$ ist standard-normalverteilt
+  $\Leftrightarrow$ $X_1,\ldots,X_d\ \iid \sim\mathbf{N}(0,1)$
+\end{itemize}

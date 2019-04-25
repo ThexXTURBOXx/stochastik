@@ -1,0 +1,115 @@
+\documentclass[11pt,a4paper,ngerman]{article}
+
+% BASICS
+\usepackage[ngerman]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{parskip}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=3.5cm,includeheadfoot]{geometry}
+\usepackage{url}
+\usepackage{hyperref}
+
+% ZAHLEN
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+% MENGEN
+\newcommand{\Po}{\mathfrak{P}}
+\newcommand{\compl}{^{\text{\tiny C}}}
+\newcommand{\pd}{\underline{\operatorname{p.d.}}}
+
+% STOCHASTIK
+\renewcommand{\O}{\Omega}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\Pr}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\e}{\mathcal{E}}
+\renewcommand{\L}{\mathcal{L}}
+\newcommand{\B}{\mathfrak{B}}
+\renewcommand{\o}{\omega}
+\newcommand{\iid}{\operatorname{i.i.d}}
+
+% ANALYSIS
+\newcommand{\limfty}[1]{\lim\limits_{#1\to\infty}}
+\renewcommand{\max}{\operatorname{max}}
+\renewcommand{\min}{\operatorname{min}}
+
+% SONSTIGES
+\newcommand{\U}{\texttt{Übung}}
+
+% CENTERED COLUMNS WITH FIX WIDTH
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+% META
+\date{April 2019}
+\author{Maximilian Reif}
+\title{Zusammenfassung Einführung in die Stochastik}
+\hypersetup{pdftex,
+            pdfauthor={Maximilian Reif},
+            pdftitle={Zusammenfassung Einführung in die Stochastik},
+            pdfsubject={},
+            pdfkeywords={},
+            pdfproducer={},
+            pdfcreator={},
+            pdfpagemode=UseOutlines
+}
+
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{titlepage}
+    \ \newline\newline\newline\newline\newline
+
+  \begin{center}
+
+  \huge Zusammenfassung zur\\
+  \Huge\textbf{Einführung in die Stochastik}\\
+  \huge im Wintersemester 17/18\\
+  \normalsize
+
+  \vspace{1cm}
+  \begin{tabular}[b]{l|l}
+  \textbf{Autor}         & Maximilian Reif
+    \texttt{\href{mailto:reifmaxi@fim.uni-passau.de}{<reifmaxi@fim.uni-passau.de>}} \\
+  \textbf{Version}       & April 2019 \\
+  \textbf{GitHub}        & \url{https://github.com/lordreif/stochastik}
+  \end{tabular}
+  \vspace{1cm}
+
+  \end{center}
+
+  \tableofcontents
+
+  % FIM logo
+  \begin{figure}[b]
+  \centering
+  %\includegraphics[width=0.6\textwidth]{/home/lordreif/Templates/img/fim.png}
+  \end{figure}
+
+
+\end{titlepage}
+
+\setcounter{page}{1}
+\include{sections/grundlagen}
+\include{sections/integration}
+\include{sections/zufallsvariablen}
+\include{sections/erwartungswert_varianz}
+\include{sections/verteilungen}
+\include{sections/sonstiges}
+
+\end{document}

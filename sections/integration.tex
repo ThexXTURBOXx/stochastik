@@ -1,0 +1,117 @@
+\section{Integration}
+
+\textbf{Lebesgue-Maß} $\lambda_d\!: \B_d \to [0,\infty]$
+\begin{itemize}
+\item Für $B_1,B_2,\ldots\in\B_d\ \pd$:\:
+  $\lambda_d(\bigcup_{i=1}^{\infty} B_i) = \sum_{i=1}^{\infty} \lambda_d(B_i)$.
+
+\item Für $a_1,b_1,\ldots,a_d,b_d\in\R$ mit $a_i \leq b_i$:\:\:
+  \mbox{$\lambda_d([a_1,b_1] \times\cdots\times [a_d,b_d]) =
+  \prod_{i=1}^{d} (b_i-a_i)$.}
+
+\item Für $a\in\R^d$, $Q\in\mathrm{O}(d)$, $A\in\B_d$:
+  $\lambda_d(a+Q(A)) = \lambda_d(A)$.
+
+\item $\forall x\in\R^d\!: \lambda_d(\{x\}) = 0$
+
+\item $\lambda_d$ ist $\sigma$-subadditiv, $\sigma$-stetig von unten
+  (nicht von oben!) und monoton
+\end{itemize}
+
+\textbf{Borel-messbare Funktionen}
+\begin{itemize}
+\item $f\!: \R^d\to\R$ \textit{Borel-messbar}
+  $:\Leftrightarrow \forall B\in\B_1\!: \{f \in B\} \in\B_d$
+
+\item $f\!: \R^d\to\overline{\R}$ \textit{Borel-messbar}
+  $:\Leftrightarrow \forall B\in\B_1\!: \{f \in B\} \in\B_d$
+  \mbox{und $\{f = \infty\} \in\B_d$}
+
+\item $\F_d := \{f\!: \R^d \to \overline{\R} \mid f \text{ ist Borel-messbar}\}$,
+  $\F_d^+ := \{f\in\F_d \mid f \geq 0\}$
+
+\item $\forall B\in\B_d\!: \chi_B\in\F_d^+$
+
+\item $f$ stetig $\Rightarrow\ f\in\F_d$
+
+\item $f,g\in\F_d \Rightarrow a \cdot f + g, f \cdot g, f/g,
+  \max(f,g)\in\F_d$ \mbox{falls wohldefiniert ($a\in\overline{\R}$)}
+\end{itemize}
+
+\textbf{Elementare Funktionen}
+\begin{itemize}
+
+\item Abbildung $\e\!: \R^d \to \overline{\R}$ \textit{elementar} $:\Leftrightarrow$\\
+  $\exists b_1,\ldots,b_n\in\overline{\R} \wedge \exists B_1,\ldots,B_n\in\B_d\
+  \pd$ mit $\e(x) = \sum_{i=1}^{n} b_i \cdot \chi_{B_i}(x)$ für alle $x\in\R^d$
+
+\item $\e_d := \{f\!: \R^d \to \overline{\R} \mid f \text{ ist elementar}\}$,
+  $\e_d^+ := \{f\in\e_d \mid f\geq 0\}$
+
+\item $\e_d \subset \F_d$
+\end{itemize}
+
+\textbf{Lebesgue-Integral}
+\begin{itemize}
+\item Für $f\in\e_d^+$:
+  $\int f~d\lambda_d := \sum_{i=1}^{n} b_i \cdot \lambda_d(B_i) \in [0,\infty]$
+
+\item Das Lebesgue-Integral ist definiert für alle $f\in\F_d^+$.
+
+\item $\int_B f~\lambda_d := \int (f\cdot \chi_B)~d\lambda_d$ für $B\in\B_d$
+
+\item Das Lebesgue-Integral ist monoton und linear.
+
+\item Für auf $[a,b]$ beschränktes $f \in \F_1$ mit
+  \mbox{$\lambda(\{x\in[a,b] \mid f \text{ unstetig in }x\}) = 0$ gilt:}
+  \[
+    \int_{[a,b]} f~d\lambda =
+    \underbrace{\int_{a}^{b}f(x)~dx}_{\text{Riemann-Integral}}
+  \]
+
+\item $\forall A\in\B_d\!: \int_A f~d\lambda_d = \int_A g~d\lambda_d$
+  $\Leftrightarrow \lambda_d(\{x\in\R^d \mid f(x) \neq g(x)\}) = 0$
+\end{itemize}
+
+\textbf{Satz von der monotonen Konvergenz}\\
+Für jede monoton wachsende Folge $0 \leq f_1 \leq f_2 \leq \cdots$
+in $\F_d^+$ gilt
+\[
+  \limfty{i}\int f_i~d\lambda_d =
+  \int\limfty{i} f_i~d\lambda_d \in [0,\infty].
+\]
+
+\textbf{Satz von der dominierten Konvergenz}\\
+Für $f,f_1,f_2,\ldots\in\F_d$ mit $\limfty{i} f_i = f$
+und $g\in\F_d$ integrierbar mit $|f_i| \leq g$ für alle $i\in\N$ gilt
+\[
+  \int f~d\lambda_d = \limfty{i} \int f_i~d\lambda_d.
+\]
+Insbesondere für $f\in\F_1$ integrierbar oder $f\in\F_1^+$:
+\[
+  \int_\R f~d\lambda = \limfty{i} \int_{[i,i]} f~d\lambda.
+\]
+
+
+\textbf{Satz von Fubini}\\
+Für $f\in\F_d$ integrierbar oder $f\in\F_d^+$ und
+$B = B_1 \times\cdots\times B_d \subset \B_1^d$ gilt
+\[
+  \int_B f~d\lambda_d = \int_{B_{i_1}} \cdots \int_{B_{i_d}} f(x_1,\ldots,x_d)~
+  d\lambda(x_{i_d}) \cdots d\lambda(x_{i_1})
+\]
+für jede Permutation $(i_1,\ldots,i_d)$ von $(1,\ldots,d)$.
+
+\textbf{Substitutionsregel} (Riemann-Integration)\\
+Für $a,b\in\R$ mit $a<b$, $g\!: [a,b] \to I$ stetig differenzierbar,
+$f\!: I\to\R$ stetig gilt
+\[
+  \int_a^b f(g(y)) \cdot g'(y)~dy = \int_{g(a)}^{g(b)}f(x)~dx.
+\]
+
+\textbf{Partielle Integration} (Riemann-Integration)\\
+Für $a,b\in\R$ mit $a<b$ und $f,g\!: [a,b]\to\R$ stetig differenzierbar gilt
+\[
+  \int_a^b f'(x) \cdot g(x)~dx
+  = f(x) \cdot g(x) \Big\vert_a^b - \int_a^b f(x) \cdot g'(x)~dx.
+\]
