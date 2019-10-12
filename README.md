@@ -6,4 +6,4 @@ Wintersemester 17/18 an der Universität Passau.
 Wie bei Zusammenfassungen üblich, sind Beweise und Erklärungen ausgelassen;
 es können sich außerdem Ungenaugkeiten oder Fehler eingeschlichen haben.
 
-Eine komplilierte Version gibt es [hier.](https://maximilianreif.de/docs/stochastik_zusammenfassung.pdf)
+Eine kompilierte Version gibt es [hier.](https://maximilianreif.de/docs/stochastik_zusammenfassung.pdf)
