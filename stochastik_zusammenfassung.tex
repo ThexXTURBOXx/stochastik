@@ -7,6 +7,7 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{dsfont}
 \usepackage{enumerate}
 \usepackage{float}
 \usepackage{graphicx}
@@ -53,6 +54,12 @@
 % CENTERED COLUMNS WITH FIX WIDTH
 \usepackage{array}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+% FIX GROUPS FOR BIG PARANTHESES
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
 
 % META
 \date{April 2019}
@@ -107,11 +114,11 @@
 \end{titlepage}
 
 \setcounter{page}{1}
-\include{sections/grundlagen}
-\include{sections/integration}
-\include{sections/zufallsvariablen}
-\include{sections/erwartungswert_varianz}
-\include{sections/verteilungen}
-\include{sections/sonstiges}
+\include{./sections/01-grundlagen}
+\include{./sections/02-zufallsvariablen}
+\include{./sections/03-integration}
+\include{./sections/04-erwartungswert_varianz}
+\include{./sections/05-verteilungen}
+\include{./sections/06-sonstiges}
 
 \end{document}

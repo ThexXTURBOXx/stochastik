@@ -143,10 +143,10 @@
 \textbf{Standard-Normalverteilung} $X\sim\mathbf{N}(0,1)$
 \begin{itemize}
 \item absolut stetig mit $f_X\!: \R \to [0,\infty],\
-  x \mapsto \frac{1}{\sqrt{2\pi}} \cdot \exp(-\frac{x^2}{2})$
+  x \mapsto \frac{1}{\sqrt{2\pi}} \cdot \exp\left(-\frac{x^2}{2}\right)$
 
 \item $\Phi(x) := F_X(x)=
-  \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{x} \exp(-\frac{y^2}{2})~d\lambda(y)$
+  \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{x} \exp\left(-\frac{y^2}{2}\right)~d\lambda(y)$
   (keine explizite Formel)
 
 \item $\forall z\in\R\!: \Phi(z) + \Phi(-z) = 1$ \U
@@ -159,7 +159,7 @@
   $\mu,\sigma\in\R,\ \sigma > 0$
 \begin{itemize}
 \item absolut stetig mit $f_X\!: \R \to [0,\infty],\
-  x \mapsto \frac{1}{\sqrt{2\pi\sigma^2}} \cdot \exp(-\frac{(x-\mu)^2)}{2\sigma^2})$
+  x \mapsto \frac{1}{\sqrt{2\pi\sigma^2}} \cdot \exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)$
 
 \item $X\sim\mathbf{N}(\mu,\sigma^2)
   \Rightarrow a \cdot X + b \sim\mathbf{N}(a\cdot\mu+b,a^2\cdot\sigma^2)$
@@ -189,7 +189,7 @@
 \begin{itemize}
 \item absolut stetig mit
   $f_X\!: \R^d \to [0,\infty),\
-  x \mapsto (2\pi)^{-d/2} \cdot \exp(-\frac{1}{2} \sum_{i=1}^{d}x_i^2)$
+  x \mapsto (2\pi)^{-d/2} \cdot \exp\left(-\frac{1}{2} \sum_{i=1}^{d}x_i^2\right)$
 
 \item $X = (X_1,\ldots,X_d)$ ist standard-normalverteilt
   $\Leftrightarrow$ $X_1,\ldots,X_d\ \iid \sim\mathbf{N}(0,1)$

@@ -1,4 +1,18 @@
 \section{Zufallsvariablen}
+\textbf{Indikatorfunktion}\\
+Sei $M$ eine Menge und $U\subseteq M$ eine Teilmenge.
+$\mathds{1}_U\!: M\to\R$ ist \textit{Indikatorfunktion} von $U$ auf $M$ mit
+\[
+  x\mapsto\mathds{1}_U(x):=\begin{cases} 1, & \text{falls }x\in U \\ 0, & \text{falls }x\notin U \end{cases}.
+\]
+
+\textbf{Menge aller reellen Intervalle}\\
+Die \textit{Menge aller reellen Intervalle} ist definiert als
+\[
+  \mathcal{J}=\{I\subseteq\R \mid I \text{ Intervall}\}.
+\]
+Also gilt insbesondere für alle $a,b\in\R$, dass $(a,b),[a,b],[a),\{a\},(-\infty,a],...\in\mathcal{J}$.
+
 \textbf{Reellwertige Zufallsvariable}\\
 $X\!: \O\to\R$ ist \textit{reellwertige Zufallsvariable} auf $(\O,\A,\Pr)$,
 wenn
@@ -100,7 +114,7 @@ ist $(X_i)_{i \in I}$ genau dann unabhängig, wenn für alle endlichen Mengen
 $\emptyset \neq \tilde{I} \subset I$ und
 \mbox{$(x_i)_{i\in\tilde{I}}\subset\R$} gilt:
 \[
-  \Pr(\bigcap_{i\in\tilde{I}} \{X_i \leq x_i\})=
+  \Pr\left(\bigcap_{i\in\tilde{I}} \{X_i \leq x_i\}\right)=
   \prod_{i\in\tilde{I}} \Pr(\{X_i \leq x_i\}).
 \]
 Die Unabhängigkeit einer Folge $(X_i)_{i \in I}$ impliziert die paarweise
