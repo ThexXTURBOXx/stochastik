@@ -6,6 +6,9 @@ im Wintersemester 17/18 an der Universität Passau.
 Hier wurden ein paar Fehler ausgebessert und einige Themen hinzugefügt, um
 ein Update auf das Wintersemester 20/21 darzustellen.
 
+Eine kompilierte Version dieser Fassung gibt es
+[hier](https://femtopedia.de/stochastik_zusammenfassung.pdf). 
+
 Wie bei Zusammenfassungen üblich, sind Beweise und Erklärungen ausgelassen;
 es können sich außerdem Ungenaugkeiten oder Fehler eingeschlichen haben.
 
