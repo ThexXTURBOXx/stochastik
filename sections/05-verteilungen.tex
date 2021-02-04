@@ -72,7 +72,10 @@
 \begin{itemize}
 \item $\forall k\in\N\!: \Pr(\{X=k\}) = p \cdot (1-p)^{k-1}$
 
-\item diskret mit $D_X = \N$
+\item diskret mit $D_X = \begin{cases}
+\N              & \text{falls } p \in (0,1)  \\
+\{1\}           & \text{falls } p = 1
+\end{cases}$
 
 \item $\E(X) = \frac{1}{p}$, $\Var(X) = \frac{1-p}{p^2}$,
   $\E(X^2) = \frac{2-p}{p^2}$
@@ -102,7 +105,7 @@
   $\E(X^2) = \frac{b^3-a^3}{3(b-a)}$
 \end{itemize}
 
-\textbf{Einpunktverteilung} $X\sim\mathbf{U}(\{c\})$ für ein $c\in\R$
+\textbf{Einpunktverteilung} $X\sim\mathbf{U}(\{c\})$ für ein $c\in\R$ (oder auch \textbf{Dirac-Maß} $X\sim\delta_c$)
 \begin{itemize}
 \item $P(\{X=c\}) = 1$
 
@@ -140,6 +143,7 @@
   (z.B. Lebensdauer, radioaktiver Zerfall,\ldots)
 \end{itemize}
 
+\clearpage
 \textbf{Standard-Normalverteilung} $X\sim\mathbf{N}(0,1)$
 \begin{itemize}
 \item absolut stetig mit $f_X\!: \R \to [0,\infty],\
