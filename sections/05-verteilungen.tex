@@ -16,7 +16,7 @@
   1    & \text{für } x \geq 1
   \end{cases}$
 
-\item $\E(X) = p$, $\Var(X) = p-p^2 = p \cdot (1-p)$
+\item $\E(X) = p = \E(X^2)$, $\Var(X) = p-p^2 = p \cdot (1-p)$
 
 \end{itemize}
 
@@ -46,6 +46,8 @@
 \item diskret mit
   $D_X = \{\max(0,n-(N-N_0)),\ldots,\min(N_0,n)\}$
 
+\item $\E(X) = n\cdot\frac{N_0}{N}$, $\Var(X) = \frac{nM}{N}\left(1-\frac{M}{N}\right)\frac{N-n}{N-1}$, $\E(X^2) = \frac{nM}{N}\left(\frac{(n-1)(M-1)}{N-1}\right)$
+
 \item Anwendung: unter $N$ Objekten finden sich $N_0$ markierte und es werden
   $n$ entnommen
 \end{itemize}
@@ -58,7 +60,7 @@
 \item diskret mit $D_X = \N_0$
 
 \item $X\sim\mathbf{P}(\lambda_1), Y\sim\mathbf{P}(\lambda_2)
-  \Rightarrow X+Y\sim\mathbf{P}(\lambda_1 + \lambda_2)$ \U
+  \Rightarrow X+Y\sim\mathbf{P}(\lambda_1 + \lambda_2)$
 
 \item $\E(X) = \lambda = \Var(X)$, $\E(X^2) = \lambda^2 + \lambda$
 
@@ -170,7 +172,7 @@
   \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{x} \exp\left(-\frac{y^2}{2}\right)~d\lambda(y)$
   (keine explizite Formel)
 
-\item $\forall z\in\R\!: \Phi(z) + \Phi(-z) = 1$ \U
+\item $\forall z\in\R\!: \Phi(z) + \Phi(-z) = 1$
 
 \item $\E(X) = 0$, $\Var(X) = 1$
 
