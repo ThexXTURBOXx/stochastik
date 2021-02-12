@@ -86,6 +86,23 @@
 \item Anwendung: diskretes Warten bis zum ersten Eintritt eines Ereignisses
 \end{itemize}
 
+\textbf{Negative Binomialverteilung} $X\sim\mathbf{NB}(r,p)$ mit $p \in (0,1]$
+\begin{itemize}
+	\item $\Pr(\{X=k\}) = \begin{cases}
+		\binom{k-1}{r-1} \cdot p^r\cdot (1-p)^{k-r} & \text{falls } k\geq r \\
+		0 &  \text{falls } k < r
+	\end{cases}$
+	
+	\item diskret mit $D_X = \begin{cases}
+		\{r,r+1,\ldots\}              & \text{falls } p \in (0,1)  \\
+		\{r\}           & \text{falls } p = 1
+	\end{cases}$
+	
+	\item $\E(X) = \frac{r}{p}$, $\Var(X) = \frac{r\cdot (1-p)}{p^2}$
+	
+	\item Anwendung: Wahrscheinlichkeit, dass beim $k$-ten Versuch der $r$-te Erfolg eintritt
+\end{itemize}
+
 \textbf{Gleichverteilung} $X\sim\mathbf{U}([a,b])$ für $-\infty < a < b < \infty$
 \begin{itemize}
 \item absolut stetig mit
@@ -120,6 +137,7 @@
 \item $\E(X) = c$, $\Var(X) = 0$
 \end{itemize}
 
+\newpage
 \textbf{Exponentialverteilung} $X\sim\mathbf{Exp}(\lambda)$ für $\lambda > 0$
 \begin{itemize}
 \item absolut stetig mit
@@ -143,7 +161,6 @@
   (z.B. Lebensdauer, radioaktiver Zerfall, \ldots)
 \end{itemize}
 
-\clearpage
 \textbf{Standard-Normalverteilung} $X\sim\mathbf{N}(0,1)$
 \begin{itemize}
 \item absolut stetig mit $f_X\!: \R \to [0,\infty],\
