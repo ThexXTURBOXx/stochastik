@@ -48,7 +48,7 @@
 
 \item $\E(X) = n\cdot\frac{N_0}{N}$, $\Var(X) = \frac{nM}{N}\left(1-\frac{M}{N}\right)\frac{N-n}{N-1}$, $\E(X^2) = \frac{nM}{N}\left(\frac{(n-1)(M-1)}{N-1}\right)$
 
-\item Anwendung: unter $N$ Objekten finden sich $N_0$ markierte und es werden
+\item Anwendung: Unter $N$ Objekten finden sich $N_0$ markierte; es werden
   $n$ entnommen
 \end{itemize}
 
@@ -59,7 +59,7 @@
 
 \item diskret mit $D_X = \N_0$
 
-\item $X\sim\mathbf{P}(\lambda_1), Y\sim\mathbf{P}(\lambda_2)
+\item $X\sim\mathbf{P}(\lambda_1), Y\sim\mathbf{P}(\lambda_2) \text{ unabhängig}
   \Rightarrow X+Y\sim\mathbf{P}(\lambda_1 + \lambda_2)$
 
 \item $\E(X) = \lambda = \Var(X)$, $\E(X^2) = \lambda^2 + \lambda$
@@ -85,7 +85,7 @@
 \item Gedächtnislos:\\ $\forall k_1,k_2\in\N \text{ mit } k_1 < k_2\!:
   \Pr(\{X > k_2\} \mid \{X > k_1\}) = \Pr(\{X > k_2 - k_1\})$
 
-\item Anwendung: diskretes Warten bis zum ersten Eintritt eines Ereignisses
+\item Anwendung: Diskretes Warten bis zum ersten Eintritt eines Ereignisses
 \end{itemize}
 
 \textbf{Negative Binomialverteilung} $X\sim\mathbf{NB}(r,p)$ mit $p \in (0,1]$
@@ -168,9 +168,9 @@
 \item absolut stetig mit $f_X\!: \R \to [0,\infty],\
   x \mapsto \frac{1}{\sqrt{2\pi}} \cdot \exp\left(-\frac{x^2}{2}\right)$
 
-\item $\Phi(x) := F_X(x)=
+\item $\Phi(x) \coloneqq F_X(x)=
   \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{x} \exp\left(-\frac{y^2}{2}\right)~d\lambda(y)$
-  (keine explizite Formel)
+  (keine explizite Formel, siehe Tabelle!)
 
 \item $\forall z\in\R\!: \Phi(z) + \Phi(-z) = 1$
 
@@ -189,10 +189,12 @@
 
 \item Also: $\frac{X-\mu}{\sigma} \sim \mathbf{N}(0,1)$
 
+\item $\Pr(\{\mu-c\leq X\leq \mu+c\}) = 2\Phi(\frac{c}{\sigma})-1$, $c>0$
+
 \item $\E(X) = \mu$, $\Var(X) = \sigma^2$
 \end{itemize}
 
-\textbf{Gleichverteilung} (mehrdimensional) $X\sim\mathbf{U}(S)$ für $S\subset\R^n$
+\textbf{Gleichverteilung} (mehrdimensional) $X\sim\mathbf{U}(S)$ für $S\subseteq\R^n$
 \underline{endlich}
 \begin{itemize}
 \item $\forall x\in S\!: \Pr(\{X=x\}) = \frac{1}{|S|}$

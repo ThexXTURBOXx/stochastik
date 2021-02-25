@@ -10,17 +10,17 @@
 \item  Absolut stetige Zufallsvariable $X$ mit Dichte $f_X$ \textit{integrierbar}
   \mbox{$:\Leftrightarrow \int_\R |x| \cdot f_X(x)~d\lambda(x) < \infty$}
 
-\item $\L_1 := \{X \text{ integrierbar}\}$ ist ein Vektorraum.
+\item $\L_1 \coloneqq \{X \text{ integrierbar}\}$ ist ein Vektorraum.
 
 \item \textit{Erwartungswert $\E(X)$} für diskretes $X\in\L_1$:
-  $\E(X) := \sum_{x \in D_X} x \cdot \Pr(\{X=x\}) \in\R$
+  $\E(X) \coloneqq \sum_{x \in D_X} x \cdot \Pr(\{X=x\}) \in\R$
 
 \item \textit{Erwartungswert $\E(X)$} für absolut stetiges $X\in\L_1$:
-  $\E(X) := \int_\R x\cdot f_X~d\lambda(x) \in\R$
+  $\E(X) \coloneqq \int_\R x\cdot f_X~d\lambda(x) \in\R$
 
 \item Der Erwartungswert ist linear und monoton.
 
-\item \textbf{Transformationssatz}: Für $X$ $d$-dimensionaler Zufallsvektor
+\item \textbf{Transformationssatz}. Für $X$ $d$-dimensionaler Zufallsvektor
   diskret/absolut stetig und \mbox{$h\!:\ \R^d\to\R$ Borel-messbar} gilt
   \[
     h(X)\in\L_1 \Leftrightarrow
@@ -40,7 +40,6 @@
 
 \item $X,Y\in\L_1$ unabhängig
   $\Rightarrow X \cdot Y \in\L_1$ mit $\E(X \cdot Y) = \E(X) \cdot \E(Y)$
-  \marginpar{\vspace{-2.2em}\begin{equation}\label{unabhaengig_e}\end{equation}}
 \end{itemize}
 \hspace{3em}
 
@@ -48,7 +47,7 @@
 \begin{itemize}
 \item $X$ \textit{quadratisch integrierbar} $:\Leftrightarrow X^2\in\L_1$
 
-\item $\L_2 := \{X \text{ quadratisch integrierbar}\}$ ist Untervektorraum von $\L_1$
+\item $\L_2 \coloneqq \{X \text{ quadratisch integrierbar}\}$ ist Untervektorraum von $\L_1$
 
 \item Für $X$ diskret mit Träger $D_X$ bzw. absolut stetig mit Dichte $f_X$ gilt:
   \[
@@ -60,7 +59,7 @@
   \]
 Gegebenenfalls ist $\E(X^2)$ durch obige(s) Summe/Integral gegeben.
 
-\item Für $X\in\L_2$ ist $\Var(X) := \E((X-\E(X))^2)$ die \textit{Varianz} von $X$.
+\item Für $X\in\L_2$ ist $\Var(X) \coloneqq \E((X-\E(X))^2)$ die \textit{Varianz} von $X$.
 
 \item $\Var(X) = \E(X^2) - (\E(X))^2$,
   \quad $\Var(\alpha \cdot X + \beta) = \alpha^2\Var(X)$
@@ -81,28 +80,42 @@ Gegebenenfalls ist $\E(X^2)$ durch obige(s) Summe/Integral gegeben.
 
 \item $X,Y\in\L_2 \Rightarrow X \cdot Y \in\L_1$
 
-\item $\overline{\L_2}$ ist Hilbertraum mit $\langle X,Y \rangle := \E(X \cdot Y)$
+\item $\overline{\L_2}$ ist Hilbertraum mit $\langle X,Y \rangle \coloneqq \E(X \cdot Y)$
 \end{itemize}
 \hspace{3em}
 
 \textbf{Kovarianz}
 \begin{itemize}
 \item Für $X,Y\in\L_2$ ist die \textit{Kovarianz} definiert durch
- \mbox{$\Cov(X,Y) := \E\big( (X-\E(X)) \cdot (Y-\E(Y)) \big)$}
+ \mbox{$\Cov(X,Y) \coloneqq \E\big( (X-\E(X)) \cdot (Y-\E(Y)) \big)$}
 
 \item Für $X,Y\in\L_2$ gilt $\Cov(X,Y) = \E(X \cdot Y) - \E(X) \cdot \E(Y)$
 
 \item $X,Y$ heißen \textit{unkorreliert} wenn $\Cov(X,Y) = 0$.\\
   Es gilt: $X,Y$ unabhängig $\Rightarrow X,Y$ unkorreliert
-  \marginpar{\vspace{-3.45em}\begin{equation}\label{unabhaengig_kor}\end{equation}}
 
 \item Für $X,Y$ mit $\Var(X),\Var(Y)>0$ ist
   \[
-    \rho(X,Y) := \frac{\Cov(X,Y)}{\sqrt{\Var(X)\cdot\Var(Y)}} =
+    \rho(X,Y) \coloneqq \frac{\Cov(X,Y)}{\sqrt{\Var(X)\cdot\Var(Y)}} =
     \cos(\sphericalangle (X,Y))
   \]
   der \textit{Korrelationskoeffizient} von $X$ und $Y$.
 
-\item \textbf{Cauchy-Schwarz}: $X,Y\in\L_2
+\item \textbf{Cauchy-Schwarz}. $X,Y\in\L_2
   \Rightarrow |\E(X \cdot Y)| \leq \sqrt{\E(X^2) \cdot \E(Y^2)}$
+\end{itemize}
+\hspace{3em}
+
+\textbf{Lineare Vorhersage}
+\begin{itemize}
+	\item $X,Y\in\mathcal{L}_2$, $\Var(X)>0$. Die beste lineare Vorhersage von $Y$ auf Basis der Beobachtung von $X$ bezüglich des mittleren quadratischen Abstandes/Fehlers ist
+	\[
+	  \hat Y_{a,b}\coloneqq a+b\cdot X\ \text{mit}
+	\]
+	\[
+	  b=\frac{\Cov(X,Y)}{\Var(X)}=\rho(X,Y)\frac{\sqrt{\Var(Y)}}{\sqrt{\Var(X)}}\ \text{und}
+	\]
+	\[
+	  a=\E(Y)-b\cdot\E(X).
+	\]
 \end{itemize}

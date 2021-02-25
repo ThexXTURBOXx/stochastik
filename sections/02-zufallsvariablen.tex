@@ -3,7 +3,7 @@
 Sei $M$ eine Menge und $U\subseteq M$ eine Teilmenge.
 $\mathds{1}_U\!: M\to\R$ ist \textit{Indikatorfunktion} von $U$ auf $M$ mit
 \[
-  x\mapsto\mathds{1}_U(x):=\chi_U(x)=\begin{cases} 1, & \text{falls }x\in U \\ 0, & \text{falls }x\notin U \end{cases}.
+  x\mapsto\mathds{1}_U(x)\coloneqq\chi_U(x)=\begin{cases} 1, & \text{falls }x\in U \\ 0, & \text{falls }x\notin U \end{cases}.
 \]
 
 \textbf{Menge aller reellen Intervalle}\\
@@ -11,13 +11,13 @@ Die \textit{Menge aller reellen Intervalle} ist definiert als
 \[
   \mathcal{J}=\{I\subseteq\R \mid I \text{ Intervall}\}.
 \]
-Also gilt insbesondere für alle $a,b\in\R$, dass $(a,b),[a,b],[a),\{a\},(-\infty,a],...\in\mathcal{J}$.
+Also gilt insbesondere für alle $a,b\in\R$, dass $(a,b),[a,b],[a),\{a\},(-\infty,a],\ldots\in\mathcal{J}$.
 
 \textbf{Reellwertige Zufallsvariable}\\
 $X\!: \O\to\R$ ist \textit{reellwertige Zufallsvariable} auf $(\O,\A,\Pr)$,
 wenn
 \[
-  \forall I \in \mathcal{J}\!: \{\o\in\O \mid X(\o) \in I\} \in \A.
+  \forall I \in \mathcal{J}\!: \{\o\in\O \mid X(\o) \in I\} \in \A \quad\xLeftrightarrow{\text{oder}}\quad \forall x\in\R:\{X\leq x\}\in\A.
 \]
 Falls $\A = \Po(\O)$ ist jedes $X\!: \O\to\R$ Zufallsvariable.
 
@@ -29,7 +29,7 @@ Die \textit{Verteilungsfunktion}
 einer Zufallsvariablen ist monoton wachsend, rechtsseitig stetig und es gilt\\
 $\limfty{x} F_X(x) = 1$,
 $\lim\limits_{x\to -\infty} F_X(x) = 0$,
-$F_X(x) - F_X(x\textbf{-}) = \Pr(\{X = x\})$.
+$F_X(x) - F_X(x\text{-}) = \Pr(\{X = x\})$.
 
 \textbf{Reellwertiger Zufallsvektor}\\
 $X = (X_1,\ldots,X_d)\!: \O\to\R^d$ ist \textit{reellwertiger Zufallsvektor},
@@ -80,10 +80,18 @@ Zu jeder Wahrscheinlichkeitsfunktion/-dichte $f$ gibt es $(\O,\A,\Pr)$, sodass
 darauf eine (diskrete/absolut stetige) Zufallsvariable $X$ mit
 $f_X = f$ existiert.
 
+Zwei Wahrscheinlichkeitsdichten $f,g\in\F_d^+$ definieren das selbe Wahrscheinlichkeitsmaß genau dann, wenn sie $\lambda_d$-fast-überall übereinstimmen, also
+\[
+  \lambda_d(\{f\neq g\})\coloneqq\lambda_d(\{x\in\R^d\mid f(x)\neq g(x)\})=0.
+\]
+
 \textbf{Diskrete Zufallsvariablen}\\
 Eine Zufallsvariable heißt \textit{diskret}, wenn $\Pr(\{X \in D\}) = 1$
 für ein abzählbares $D\subset\R$ gilt.
-Das kleinste solche $D =: D_X$ heißt \textit{Träger} der Zufallsvariablen $X$.\\
+Das ``kleinste'' solche $D \eqqcolon D_X$ heißt \textit{Träger} der Zufallsvariablen $X$. Es gilt also
+\[
+  \forall x \in D_X\!: \Pr(\{X=x\}) > 0.
+\]
 Es gilt:
 $\underbrace{(\O,\A,\Pr) \text{ diskret}}_{\text{also $\O$ abzählbar}}$
 $\Rightarrow X(\O)$ abzählbar $\Rightarrow X$ diskret.
@@ -101,11 +109,12 @@ Für $h:\R^d\to\R$ Borel-messbar ist $h(X)$ diskret mit $D_{h(X)} = h(D_X)$.
 Ein Zufallsvektor $X$ heißt \textit{absolut stetig verteilt} falls die
 Verteilung $\Pr_X$ eine Dichte $f_X$ besitzt.
 
+\newpage
 \textbf{Unabhängigkeit von Zufallsvariablen}\\
 Eine Folge $(X_i)_{i \in I}$ von Zufallsvariablen heißt \textit{unabhängig} wenn
 für jede Folge $(J_i)_{i \in I}$ von Intervallen die Folge der Ereignisse
 $(\{X_i \in J_i\})_{i \in I}$ unabhängig ist.
-Wegen:
+Wegen
 \[
   \forall x\in\R\!: \{X \leq x\} \in \A
   \Leftrightarrow \forall I \text{ Intervall}\!: \{X \in I\} \in \A
@@ -120,8 +129,6 @@ $\emptyset \neq \tilde{I} \subset I$ und
 Die Unabhängigkeit einer Folge $(X_i)_{i \in I}$ impliziert die paarweise
 Unabhängigkeit von $X_i,X_j$ für $i,j \in I$ mit $i \neq j$.
 
-Beachte auch (\ref{unabhaengig_e}) und (\ref{unabhaengig_kor}).
-
 Es gilt: $X,X$ unabhängig $\Leftrightarrow \exists c\in\R\!: \Pr(\{X=c\}) = 1$
 
 \textbf{Identische Verteilung}\\
@@ -135,7 +142,7 @@ $\Pr_{\tilde{X}} = \Pr_{\tilde{Y}}$.\\
 Es gilt: $\tilde{X},\tilde{Y}$ identisch verteilt
 $\Rightarrow \forall i\in\{1,\ldots,d\}\!: \tilde{X}_i,\tilde{Y}_i$ identisch verteilt.
 
-\clearpage
+\newpage
 \begin{table}
 \centering
 \caption*{\textbf{Vergleich}}

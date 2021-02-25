@@ -27,10 +27,10 @@
   $:\Leftrightarrow \forall B\in\B_1\!: \{f \in B\} \in\B_d$
   \mbox{und $\{f = \infty\} \in\B_d$}
 
-\item $\F_d := \{f\!: \R^d \to \overline{\R} \mid f \text{ ist Borel-messbar}\}$,
-  $\F_d^+ := \{f\in\F_d \mid f \geq 0\}$
+\item $\F_d \coloneqq \{f\!: \R^d \to \overline{\R} \mid f \text{ ist Borel-messbar}\}$,
+  $\F_d^+ \coloneqq \{f\in\F_d \mid f \geq 0\}$
 
-\item $\forall B\in\B_d\!: \chi_B\in\F_d^+$
+\item $\forall B\in\B_d\!: \mathds{1}_B=\chi_B\in\F_d^+$
 
 \item $f$ stetig $\Rightarrow f\in\F_d$
 
@@ -41,12 +41,12 @@
 \textbf{Elementare Funktionen}
 \begin{itemize}
 
-\item Abbildung $\e\!: \R^d \to \overline{\R}$ \textit{elementar} $:\Leftrightarrow$\\
+\item Abbildung $f\!: \R^d \to \overline{\R}$ \textit{elementar} $:\Leftrightarrow$\\
   $\exists b_1,\ldots,b_n\in\overline{\R} \wedge \exists B_1,\ldots,B_n\in\B_d\
-  \pd$ mit $\e(x) = \sum_{i=1}^{n} b_i \cdot \chi_{B_i}(x)$ für alle $x\in\R^d$
+  \pd$ mit $f(x) = \sum_{i=1}^{n} b_i \cdot \chi_{B_i}(x)$ für alle $x\in\R^d$
 
-\item $\e_d := \{f\!: \R^d \to \overline{\R} \mid f \text{ ist elementar}\}$,
-  $\e_d^+ := \{f\in\e_d \mid f\geq 0\}$
+\item $\e_d \coloneqq \{f\!: \R^d \to \overline{\R} \mid f \text{ ist elementar}\}$,
+  $\e_d^+ \coloneqq \{f\in\e_d \mid f\geq 0\}$
 
 \item $\e_d \subset \F_d$
 \end{itemize}
@@ -54,15 +54,15 @@
 \textbf{Lebesgue-Integral}
 \begin{itemize}
 \item Für $f\in\e_d^+$:
-  $\int f~d\lambda_d := \sum_{i=1}^{n} b_i \cdot \lambda_d(B_i) \in [0,\infty]$
+  $\int f~d\lambda_d \coloneqq \sum_{i=1}^{n} b_i \cdot \lambda_d(B_i) \in [0,\infty]$
 
 \item Das Lebesgue-Integral ist definiert für alle $f\in\F_d^+$.
 
-\item $\int_B f~\lambda_d := \int (f\cdot \chi_B)~d\lambda_d$ für $B\in\B_d$
+\item $\int_B f~\lambda_d \coloneqq \int (f\cdot \chi_B)~d\lambda_d$ für $B\in\B_d$
 
 \item Das Lebesgue-Integral ist monoton und linear.
 
-\item Für auf $[a,b]$ beschränktes $f \in \F_1$ mit
+\item 4.28: Für auf $[a,b]$ beschränktes $f \in \F_1$ mit
   \mbox{$\lambda(\{x\in[a,b] \mid f \text{ unstetig in }x\}) = 0$ gilt:}
   \[
     \int_{[a,b]} f~d\lambda =
@@ -113,5 +113,5 @@ $f\!: I\to\R$ stetig gilt
 Für $a,b\in\R$ mit $a<b$ und $f,g\!: [a,b]\to\R$ stetig differenzierbar gilt
 \[
   \int_a^b f'(x) \cdot g(x)~dx
-  = f(x) \cdot g(x) \Big\vert_a^b - \int_a^b f(x) \cdot g'(x)~dx.
+  = f(x) \cdot g(x) \Big\vert_{x=a}^b - \int_a^b f(x) \cdot g'(x)~dx.
 \]

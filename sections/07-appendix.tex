@@ -1,0 +1,160 @@
+\section{Appendix}
+
+In diesem Kapitel werden noch einige Konzepte im Zusammenhang mit Grenzwertsätzen und Klausurtipps vorgestellt. Die Grenzwertsätze spielen in der Klausur nur eine nachrangige Rolle und man kann leicht ohne diese bestehen, deswegen sind diese nicht in den ``normalen'' Kapiteln zusammengefasst.
+
+\subsection{Grenzwertsätze}
+
+Im Folgenden sei $X_1,X_2,\ldots$ eine Folge von i.i.d. Zufallsvariablen mit $X_1\in\L_2$ und $\Var(X_1)>0$ und
+\[
+  S_n\coloneqq \sum_{i=1}^n X_i\ \text{für ein großes}\ n
+\]
+
+\textbf{Fast-Sicherheit}
+\begin{itemize}
+	\item Eigenschaft von Funktion $f:\O\rightarrow\R$ gilt für \emph{fast alle} $\o\in\O$, bzw. \emph{fast-sicher}, falls
+	\[
+	  \exists A\in\A\!:\Pr(A)=1\wedge\forall\o\in\A\!:\text{Eigenschaft gilt für}\ \o.
+	\]
+	
+	\item $(X_n)_{n\in\N}$ beliebige Folge von Zufallsvariablen und $X$ eine weitere Zufallsvariable. Dann \emph{konvergiert} $X_n$ \emph{fast-sicher gegen} $X$, falls
+	\[
+	  \Pr\left(\left\{\o\in\O\ \Big\vert\ \limfty{n} X_n(\o)=X(\o)\right\}\right)=1.
+	\]
+\end{itemize}
+
+\textbf{Schwaches Gesetz der großen Zahlen (SWGGZ)}
+\begin{itemize}
+	\item Für alle $\varepsilon>0$ gilt
+	\[
+	  \limfty{n} \Pr\left(\left\{\left\lvert\frac{S_n}{n}-\E(X_1)\right\rvert\geq\varepsilon\right\}\right)=0.
+	\]
+
+	\item Für alle $\varepsilon>0$ gilt
+	\[
+	\limfty{n} \Pr\left(\left\{\E(X_1)-\varepsilon<\frac{S_n}{n}<\E(X_1)+\varepsilon\right\}\right)=1.
+	\]
+\end{itemize}
+
+\textbf{Starkes Gesetz der großen Zahlen (STGGZ)}
+\begin{itemize}
+	\item Für $X_1\in\L_1$ gilt
+	\[
+	  \limfty{n}\frac{S_n}{n}=\E(X_1)\ \text{fast-sicher}.
+	\]
+	
+	\item Für $X_1\in\L_1$ existiert $A\in\A$ mit $\Pr(A)=1$ und
+	\[
+	  \forall\o\in A\!: \limfty{n}\frac{S_n(\o)}{n}=\E(X_1).
+	\]
+	
+	\item Für fast alle $\o\in\O$ gilt:
+	\[
+	  \forall\varepsilon>0\!:\exists n_0(\varepsilon,\o)\!:\forall n\geq n_0(\varepsilon,\o)\!:\E(X_1)-\varepsilon\leq\frac{S_n(\o)}{n}\leq \E(X_1)+\varepsilon.
+	\]
+	
+	\item Verfahren zur Approximation des Erwartungswerts: \emph{Monte-Carlo-Methode}, also Erzeugung einer Realisierung $(x_1',x_2',\ldots,x_n')$ von $(X_1',X_2',\ldots,X_n')$ für ein großes $n$ und Berechnung der Approximation durch
+	\[
+	  \E(X)\approx \frac{1}{n}\sum_{i=1}^n x_i'.
+	\]
+\end{itemize}
+
+\textbf{Hoeffding-Ungleichung}
+\begin{itemize}
+	\item $\Pr(\{0\leq X_i\leq 1\})=1$ für alle $i\in\N$
+	\[
+      \Rightarrow \Pr\left(\left\{\left\lvert\frac{S_n}{n}-\E(X_1)\right\rvert\geq\varepsilon\right\}\right)\leq 2e^{-2\varepsilon^2 n}.
+	\]
+\end{itemize}
+
+\textbf{Limes Superior}
+\begin{itemize}
+	\item Für $A_1,A_2,\ldots\in\A$ Folge von Ereignissen ist
+	\[
+	  \limsup_{n\to\infty} A_n\coloneqq\bigcap_{n=1}^\infty\bigcup_{m=n}^\infty A_m\in\A.
+	\]
+
+	\item Es gilt
+	\[
+	  \o\in\limsup_{n\to\infty} A_n\ \Leftrightarrow\ \forall n\in\N\!:\exists m\in\N\!:m\geq n\wedge \o\in A_m,
+	\]
+	also
+	\[
+	  \limsup_{n\to\infty} A_n=\{\o\in\O\mid\o\in A_n\ \text{für unendlich viele}\ n\in\N\}.
+	\]
+\end{itemize}
+
+\textbf{Borel-Cantelli}
+\begin{itemize}
+	\item Für $A_1,A_2,\ldots\in\A$ Folge von Ereignissen mit $\sum_n^\infty \Pr(A_n)<\infty$ ist
+	\[
+	  \Pr(\limsup_{n\to\infty} A_n)=0.
+	\]
+	
+	\item Für $A_1,A_2,\ldots\in\A$ Folge von \emph{unabhängigen} Ereignissen mit $\sum_n^\infty \Pr(A_n)=\infty$ ist
+	\[
+	  \Pr(\limsup_{n\to\infty} A_n)=1.
+	\]
+\end{itemize}
+
+\textbf{Grenzwertsatz von De Moivre-Laplace}
+\begin{itemize}
+	\item Seien $X_1,\ldots,X_n$ i.i.d., $\sim \textbf{B}(1,p)$, $p\in(0,1)$, $S_n\coloneqq\sum_{i=1}^n X_i\sim\textbf{B}(n,p)$ und setze
+	\[
+	  \sigma_n\coloneqq\sqrt{\Var(S_n)}=\sqrt{np(1-p)}.
+	\]
+	Dann gilt für alle $-\infty\leq u<v\leq\infty$
+	\[
+	  \limfty{n} \Pr\left(\left\{u\leq\frac{S_n-np}{\sigma_n}\leq v\right\}\right)=\Phi(v)-\Phi(u).
+	\]
+\end{itemize}
+
+\textbf{Zentraler Grenzwertsatz (ZGWS)}
+\begin{itemize}
+	\item Es sind
+	\begin{align*}
+	  \mathcal{C}_Z\coloneqq\ &\{x\in\R\mid F_Z\ \text{stetig bei}\ x\}=\{x\in\R\mid \Pr(\{Z=x\})=0\}\ \text{und}\\
+	  \mathcal{D}_Z\coloneqq\ &\{x\in\R\mid F_Z\ \text{unstetig bei}\ x\}
+	\end{align*}
+    Fun Fact: $\mathcal{C}$ und $\mathcal{D}$ stehen für \emph{continuous} und \emph{discontinuous}.
+	
+	\item Folge $(Z_n)_{n\in\N}$ von Zufallsvariablen \emph{konvergiert in Verteilung gegen} die Zufallsvariable Z, falls
+	\[
+	  \forall x\in\mathcal{C}_Z\!:\limfty{n} F_{Z_n}(x)=F_Z(x).
+	\]
+	\emph{Notation}:
+	\[
+	  Z_n\xlongrightarrow{d}Z\ \text{oder}\ Z_n\xlongrightarrow{\mathcal{D}}Z.
+	\]
+	Fun Fact: $d$ und $\mathcal{D}$ stehen für \emph{in distribution}.
+
+	\item Seien $X_1,x_2,\ldots$ i.i.d. Zufallsvariablen mit $X_1\in\L_2$, $\Var(X_1)>0$. Setze
+	\[
+	  \mu\coloneqq\E(X_1),\ \sigma\coloneqq\sqrt{\Var(X_1)},\ S_n\coloneqq\sum_{i=1}^n X_i,\ S_n^*\coloneqq \frac{S_n-n\mu}{\sigma\sqrt{n}}\ \text{für}\ n\in\N.
+	\]
+	Dann gilt
+	\[
+	  S_n^*\xlongrightarrow{d} Z\ \text{mit}\ Z\sim\textbf{N}(0,1).
+	\]
+\end{itemize}
+
+\newpage
+\subsection{Klausurtipps}
+
+Die folgenden Tipps haben mir (Nico Mexis) bei der Klausur besonders geholfen und führen zu einer höheren Wahrscheinlichkeit $p$, die Klausur zu bestehen.
+
+\begin{itemize}
+	\item Dieses Dokument ist im Prinzip mein gesamter Spickzettel für die Klausur gewesen. Es reicht bei Weitem der Inhalt dieser Zusammenfassung zum Bestehen der Klausur (ohne meine Note komplett preisgeben zu wollen: Ich bestand gut). Diese Zusammenfassung habe ich auf die Vorderseite und die halbe Rückseite gekriegt auf dem DIN-A4 Blatt.
+
+	\item Wie bereits von \texttt{.:KiR5CHi:.} in der Altklausur \textit{WS19-1} beschrieben, besteht der Knackpunkt der Klausur darin, sich die Zeit richtig einzuplanen. An sich sind die Aufgaben nicht schwierig, aber man sollte sich möglichst keine zu lange Denkpause erlauben und die Aufgaben, die die meisten Punkte bringen zuerst lösen.
+
+	\item In der Klausur sind \textit{alle} Schritte richtig zu dokumentieren. Beispielsweise (schreibt diese Schritte exakt so auf den Spickzettel und dann in die Klausur, hier gehen meistens die viele Punkte flöten):
+	\begin{align*}
+		\int_{\R} \mathds{1}_{(0,1]}(x)\cdot\frac{1}{\sqrt{2e}}\frac{1}{\sqrt{x}}~d\lambda(x)=\ &\int_{\R} \limfty{k}\underbrace{\mathds{1}_{\left[\frac{1}{k},1\right]}(x)\cdot\frac{1}{\sqrt{2e}}\frac{1}{\sqrt{x}}}_{\geq 0,~\forall k \text{ monoton wachsend}}~d\lambda(x)\\
+		\xlongequal{\text{Monotone Konvergenz}}\ &\limfty{k}\int_{\R}\mathds{1}_{\left[\frac{1}{k},1\right]}(x)\cdot\frac{1}{\sqrt{2e}}\frac{1}{\sqrt{x}}~d\lambda(x)\\
+		=\ &\limfty{k}\int_{\left[\frac{1}{k},1\right]}\frac{1}{\sqrt{2e}}\frac{1}{\sqrt{x}}~d\lambda(x)\\
+		\xlongequal{\text{4.28}}\ &\limfty{k}\int_{\frac{1}{k}}^1 \frac{1}{\sqrt{2e}}\frac{1}{\sqrt{x}}~d\lambda(x)\\
+		=\ &\ldots
+	\end{align*}
+	Am Ende dann wie sonst mit dem Riemann-Integral rechnen. Den Limes so lange dort stehen lassen wie möglich, da das Riemann-Integral ja nur auf einem kompakten Intervall definiert ist (also am besten bis das Integral komplett weg ist)!!!\\
+    Man kann auch Abkürzungen verwenden wie ``mon. Konv.'' statt ``Monotone Konvergenz''.
+\end{itemize}
