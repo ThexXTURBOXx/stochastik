@@ -12,8 +12,11 @@ Eine kompilierte Version dieser Fassung gibt es
 Wie bei Zusammenfassungen üblich, sind Beweise und Erklärungen ausgelassen;
 es können sich außerdem Ungenaugkeiten oder Fehler eingeschlichen haben.
 
-Eine kompilierte Version des Originals (Wintersemester 17/18) gibt es
+Eine kompilierte Version des Originals (Wintersemester 17/18) gab es mal
 [hier](https://maximilianreif.de/docs/stochastik_zusammenfassung.pdf).
+Diese wurde leider nicht in der Wayback Machine gespeichert...
+Aber wie gesagt, die aktuelle Version gibt's
+[hier](https://femtopedia.de/stochastik_zusammenfassung.pdf). :)
 
 ## Kompilieren
 
