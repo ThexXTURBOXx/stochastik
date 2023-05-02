@@ -2,7 +2,7 @@
 
 % BASICS
 \usepackage[ngerman]{babel}
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{parskip}
 \usepackage{amsfonts}
 \usepackage{amsmath}
@@ -110,19 +110,25 @@
   % FIM logo
   \begin{figure}[b]
   \centering
-  \includegraphics[width=0.6\textwidth]{./images/fim.png}
+  \includegraphics[width=0.6\textwidth]{images/fim.png}
   \end{figure}
 
 
 \end{titlepage}
 
 \setcounter{page}{1}
-\include{./sections/01-grundlagen}
-\include{./sections/02-zufallsvariablen}
-\include{./sections/03-integration}
-\include{./sections/04-erwartungswert_varianz}
-\include{./sections/05-verteilungen}
-\include{./sections/06-sonstiges}
-\include{./sections/07-appendix}
+\input{sections/01-grundlagen}
+\clearpage
+\input{sections/02-zufallsvariablen}
+\clearpage
+\input{sections/03-integration}
+\clearpage
+\input{sections/04-erwartungswert_varianz}
+\clearpage
+\input{sections/05-verteilungen}
+\clearpage
+\input{sections/06-sonstiges}
+\clearpage
+\input{sections/07-appendix}
 
 \end{document}
